@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.seanchenxi.gwt.html.client;
+package com.seanchenxi.gwt.html.client.util;
 
 import com.google.gwt.core.client.JavaScriptObject;
 
