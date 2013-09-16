@@ -16,11 +16,11 @@
   -->
 
 <module>
-  
+
+    <inherits name="com.google.gwt.event.dom.DomEvent"/>
     <inherits name='com.google.gwt.typedarrays.TypedArrays'/>
     <inherits name="com.seanchenxi.gwt.html.HTML5"/>
     <inherits name="com.seanchenxi.gwt.file.File"/>
-    <inherits name="com.google.gwt.event.dom.DomEvent"/>
 
   <replace-with class="com.seanchenxi.gwt.webrtc.client.WebRTCImplWebkit">
       <when-type-is class="com.seanchenxi.gwt.webrtc.client.WebRTCImpl" />

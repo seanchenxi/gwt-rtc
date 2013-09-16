@@ -17,15 +17,41 @@
 package com.seanchenxi.gwt.webrtc.client;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.core.client.JsArray;
 
 /**
  * User: Xi
  */
 public class Constraint extends JavaScriptObject {
 
-    protected Constraint(){}
+    public static Constraint create(){
+        return JavaScriptObject.createObject().cast();
+    }
+
+    protected Constraint() {
+    }
 
     public final native void set(String name, boolean enable)/*-{
         this[name] = enable;
+    }-*/;
+
+    public final native void set(String name, int number)/*-{
+        this[name] = number;
+    }-*/;
+
+    public final native void set(String name, String str)/*-{
+        this[name] = str;
+    }-*/;
+
+    public final native void set(String name, Constraint constraint)/*-{
+        this[name] = constraint;
+    }-*/;
+
+    public final native void set(String name, JsArray<Constraint> constraints)/*-{
+        this[name] = constraints;
+    }-*/;
+
+    public final native <T> T get(String name)/*-{
+        return this[name];
     }-*/;
 }

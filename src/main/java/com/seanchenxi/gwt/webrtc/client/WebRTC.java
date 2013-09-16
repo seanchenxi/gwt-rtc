@@ -85,15 +85,19 @@ public class WebRTC {
         return IMPL.createDataChannelInit(reliable);
     }
 
-    public static Constraints createConstraints() {
-        return IMPL.createConstraints();
-    }
-
     public static String createObjectURL(FNObject object) {
         return createObjectURL(object.asNative());
     }
 
     public static String createObjectURL(JavaScriptObject object) {
         return IMPL.createObjectURL(object);
+    }
+
+    public static String revokeObjectURL(String objectURL) {
+        return IMPL.revokeObjectURL(objectURL);
+    }
+
+    public static boolean isMobile() {
+        return IMPL.isMobile();
     }
 }

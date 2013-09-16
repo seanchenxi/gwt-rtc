@@ -16,12 +16,31 @@
 
 package com.seanchenxi.gwt.webrtc.client.media;
 
+import com.google.gwt.core.client.JavaScriptObject;
+import com.seanchenxi.gwt.webrtc.client.Constraints;
+
 /**
  * User: Xi
  */
-public interface UserMediaConstraints {
+public class UserMediaConstraints extends Constraints {
 
-    void setVideo(boolean video);
+    public static UserMediaConstraints create(){
+        return JavaScriptObject.createObject().cast();
+    }
 
-    void setAudio(boolean audio);
+    protected UserMediaConstraints() {
+    }
+
+    public final void setVideo(boolean video){
+        set("video", video);
+    }
+
+    public final void setVideo(Constraints constraints){
+        set("video", constraints);
+    }
+
+    public final void setAudio(boolean audio){
+        set("audio", audio);
+    }
+
 }

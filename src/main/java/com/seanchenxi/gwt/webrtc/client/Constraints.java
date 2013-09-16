@@ -18,53 +18,42 @@ package com.seanchenxi.gwt.webrtc.client;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
+import com.google.gwt.core.client.JsArrayUtils;
 
 /**
  * User: Xi
  */
-public class Constraints extends JavaScriptObject {
+public class Constraints extends Constraint {
+
+    public static Constraints create(){
+        return JavaScriptObject.createObject().cast();
+    }
 
     protected Constraints(){}
 
-    public final native void setConstraint(String name, boolean enable) /*-{
-        this[name] = enable;    
-    }-*/; 
-  
-    public final native JsArray<Constraint> getOptionalConstraints() /*-{
-        if(typeof this.optional === 'undefined'){
-            this.optional = [];
-        }
-        return this.optional;
-    }-*/;
+    public final void setMandatory(Constraint constraint){
+        set("mandatory", constraint);
+    }
 
-    public final native void addOptionalConstraint(Constraint constraint) /*-{
-        if(typeof this.optional === 'undefined'){
-            this.optional = [];
+    public final Constraint getMandatory(){
+        Constraint mandatory = get("mandatory");
+        if(mandatory == null){
+            setMandatory(Constraint.create());
+            mandatory = get("mandatory");
         }
-        this.optional.push(constraint);
-    }-*/;
+        return mandatory;
+    }
 
-    public final native void addOptionalConstraint(String name, boolean enable) /*-{
-        if(typeof this.optional === 'undefined'){
-            this.optional = [];
+    public final void setOptional(Constraint[] constraint){
+        set("optional", JsArrayUtils.readOnlyJsArray(constraint));
+    }
+
+    public final JsArray<Constraint> getOptional(){
+        JsArray<Constraint> optional = get("optional");
+        if(optional == null){
+            setOptional(new Constraint[]{});
+            optional = get("optional");
         }
-        var constraint = {};
-        constraint[name] = enable;
-        this.optional.push(constraint);
-    }-*/;
-
-    public final native Constraint getMandatoryConstraints() /*-{
-        if(typeof this.mandatory === 'undefined'){
-            this.mandatory = {};
-        }
-        return this.mandatory;
-    }-*/;
-
-    public final native void setMandatoryConstraint(String name, boolean enable) /*-{
-        if(typeof this.mandatory === 'undefined'){
-            this.mandatory = {};
-        }
-        this.mandatory[name] = enable;
-    }-*/;
-
+        return optional;
+    }
 }

@@ -66,4 +66,9 @@ public class WebRTCImplWebkit extends WebRTCImpl {
     public final native String createObjectURL(JavaScriptObject object) /*-{
         return $wnd.webkitURL.createObjectURL(object);
     }-*/;
+
+    @Override
+    public final native String revokeObjectURL(String objectURL) /*-{
+        return $wnd.webkitURL.revokeObjectURL(objectURL);
+    }-*/;
 }

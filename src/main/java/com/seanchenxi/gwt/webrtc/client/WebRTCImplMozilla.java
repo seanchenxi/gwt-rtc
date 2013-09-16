@@ -66,4 +66,9 @@ public class WebRTCImplMozilla extends WebRTCImpl {
     public final native String createObjectURL(JavaScriptObject object) /*-{
         return $wnd.URL.createObjectURL(object);
     }-*/;
+
+    @Override
+    public final native String revokeObjectURL(String objectURL) /*-{
+        return $wnd.URL.revokeObjectURL(objectURL);
+    }-*/;
 }

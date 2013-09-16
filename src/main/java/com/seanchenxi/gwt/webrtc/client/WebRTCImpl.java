@@ -42,10 +42,6 @@ public abstract class WebRTCImpl {
         return createRTCPeerConnectionNative(configuration, null);
     }
 
-    public Constraints createConstraints() {
-        return JavaScriptObject.createObject().cast();
-    }
-
     public final native RTCSessionDescriptionInit createRTCSessionDescriptionInit(RTCSdpType type, String sdp) /*-{
         return {
             type: type.@com.seanchenxi.gwt.webrtc.client.connection.RTCSdpType::getValue()(), sdp: sdp
@@ -56,6 +52,21 @@ public abstract class WebRTCImpl {
         return {
             candidate: candidate, sdpMid: sdpMid, sdpMLineIndex: sdpMLineIndex
         };
+    }-*/;
+
+    public final native boolean isMobile()/*-{
+        if( navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+            ){
+            return true;
+        }else {
+            return false;
+        }
     }-*/;
 
     public final DataChannelInit createDataChannelInit(boolean reliable) {
@@ -91,4 +102,6 @@ public abstract class WebRTCImpl {
     public abstract RTCIceCandidate createRTCIceCandidate(RTCIceCandidateInit candidateInitDict);
 
     public abstract String createObjectURL(JavaScriptObject object);
+
+    public abstract String revokeObjectURL(String objectURL);
 }

@@ -17,6 +17,7 @@
 package com.seanchenxi.gwt.websocket.client;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.dom.client.NativeEvent;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.typedarrays.shared.ArrayBuffer;
 import com.google.gwt.typedarrays.shared.ArrayBufferView;
@@ -120,7 +121,7 @@ public final class WebSocket extends FNObject {
         return addFnEventHandler(CloseEvent.getType(), handler);
     }
 
-    public HandlerRegistration addErrorHandler(ErrorEvent.Handler handler){
+    public HandlerRegistration addErrorHandler(ErrorEvent.Handler<NativeEvent> handler){
         return addFnEventHandler(ErrorEvent.getType(), handler);
     }
 
