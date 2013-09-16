@@ -24,10 +24,10 @@ import com.google.gwt.typedarrays.shared.ArrayBufferView;
 import com.seanchenxi.gwt.file.client.Blob;
 import com.seanchenxi.gwt.html.client.BinaryType;
 import com.seanchenxi.gwt.html.client.FNObject;
-import com.seanchenxi.gwt.webrtc.client.event.CloseEvent;
-import com.seanchenxi.gwt.webrtc.client.event.ErrorEvent;
-import com.seanchenxi.gwt.webrtc.client.event.MessageEvent;
-import com.seanchenxi.gwt.webrtc.client.event.OpenEvent;
+import com.seanchenxi.gwt.html.client.event.CloseEvent;
+import com.seanchenxi.gwt.html.client.event.ErrorEvent;
+import com.seanchenxi.gwt.html.client.event.MessageEvent;
+import com.seanchenxi.gwt.html.client.event.OpenEvent;
 
 /**
  * User: Xi

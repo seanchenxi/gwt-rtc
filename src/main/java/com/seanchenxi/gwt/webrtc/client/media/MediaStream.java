@@ -19,9 +19,9 @@ package com.seanchenxi.gwt.webrtc.client.media;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.seanchenxi.gwt.html.client.FNObject;
-import com.seanchenxi.gwt.webrtc.client.event.AddTrackEvent;
-import com.seanchenxi.gwt.webrtc.client.event.EndedEvent;
-import com.seanchenxi.gwt.webrtc.client.event.RemoveTrackEvent;
+import com.seanchenxi.gwt.html.client.event.AddTrackEvent;
+import com.seanchenxi.gwt.html.client.event.EndedEvent;
+import com.seanchenxi.gwt.html.client.event.RemoveTrackEvent;
 
 /**
  * User: Xi

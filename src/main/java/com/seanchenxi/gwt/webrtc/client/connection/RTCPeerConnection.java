@@ -27,7 +27,7 @@ import com.seanchenxi.gwt.webrtc.client.Constraints;
 import com.seanchenxi.gwt.webrtc.client.data.DataChannel;
 import com.seanchenxi.gwt.webrtc.client.data.DataChannelNative;
 import com.seanchenxi.gwt.webrtc.client.data.DataChannelInit;
-import com.seanchenxi.gwt.webrtc.client.event.*;
+import com.seanchenxi.gwt.html.client.event.*;
 import com.seanchenxi.gwt.webrtc.client.media.MediaStream;
 import com.seanchenxi.gwt.webrtc.client.media.MediaStreamNative;
 

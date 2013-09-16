@@ -18,6 +18,7 @@ package com.seanchenxi.gwt.html.client;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.event.shared.*;
+import com.seanchenxi.gwt.html.client.event.FnEvent;
 
 /**
  * User: Xi

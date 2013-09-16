@@ -18,7 +18,7 @@ package com.seanchenxi.gwt.file.client;
 
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.seanchenxi.gwt.html.client.FNObject;
-import com.seanchenxi.gwt.webrtc.client.event.*;
+import com.seanchenxi.gwt.html.client.event.*;
 
 /**
  * User: Xi

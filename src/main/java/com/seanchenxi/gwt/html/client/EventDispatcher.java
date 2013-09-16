@@ -36,7 +36,7 @@ public class EventDispatcher {
         return $entry(function(evt) {
             //var exceptedType = eventType.@com.seanchenxi.gwt.html.client.EventType::getValue()();
             //if(console) console.log("\nEventDispatcher -> dispatchEvent " + evt + "(type="+evt.type+", exceptedType=" + exceptedType + ")\n");
-            @com.seanchenxi.gwt.html.client.FnEvent::fireNativeEvent(Lcom/seanchenxi/gwt/html/client/EventType;Lcom/google/gwt/dom/client/NativeEvent;Lcom/seanchenxi/gwt/html/client/FNObject;)(eventType, evt, fnObject);
+            @com.seanchenxi.gwt.html.client.event.FnEvent::fireNativeEvent(Lcom/seanchenxi/gwt/html/client/EventType;Lcom/google/gwt/dom/client/NativeEvent;Lcom/seanchenxi/gwt/html/client/FNObject;)(eventType, evt, fnObject);
         });
     }-*/;
 
