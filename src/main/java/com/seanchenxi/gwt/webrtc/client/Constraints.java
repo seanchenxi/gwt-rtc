@@ -16,7 +16,6 @@
 
 package com.seanchenxi.gwt.webrtc.client;
 
-import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.core.client.JsArrayUtils;
 
@@ -25,9 +24,9 @@ import com.google.gwt.core.client.JsArrayUtils;
  */
 public class Constraints extends Constraint {
 
-    public static Constraints create(){
-        return JavaScriptObject.createObject().cast();
-    }
+    public static native Constraints create() /*-{
+        return { mandatory:{}, optional:[] };
+    }-*/;
 
     protected Constraints(){}
 
